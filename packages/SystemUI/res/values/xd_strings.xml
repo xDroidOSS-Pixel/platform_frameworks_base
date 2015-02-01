@@ -38,4 +38,8 @@
     <string name="global_action_reboot_systemui">SystemUI</string>
     <string name="global_action_settings">Settings</string>
 
+    <!-- Custom QS tiles -->
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
+
 </resources>
