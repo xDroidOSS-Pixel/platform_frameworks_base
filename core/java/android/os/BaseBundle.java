@@ -457,7 +457,7 @@ public class BaseBundle {
             } else {
                 throw e;
             }
-        }finally {
+        } finally {
             mMap = map;
             if (recycleParcel) {
                 recycleParcel(parcelledData);
