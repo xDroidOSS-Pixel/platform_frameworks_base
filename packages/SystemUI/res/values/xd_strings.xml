@@ -25,4 +25,8 @@
 
     <!-- Screenshot Delete Toast -->
     <string name="delete_screenshot_toast">Screenshot deleted</string>
+
+    <!-- Title of statusbar tuner -->
+    <string name="status_bar_icons">Status bar icons</string>
+
 </resources>
