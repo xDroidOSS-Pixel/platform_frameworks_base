@@ -52,6 +52,11 @@
         android:key="bluetooth"
         android:title="@string/quick_settings_bluetooth_label" />
 
+    <com.android.systemui.tuner.StatusBarSwitch
+        android:icon="@drawable/ic_statusbar_camera"
+        android:key="cameratoggle"
+        android:title="@string/quick_settings_camera_label" />
+
     <!-- nfc -->
     <com.android.systemui.tuner.StatusBarSwitch
         android:icon="@drawable/ic_statusbar_nfc"
@@ -69,6 +74,11 @@
         android:icon="@drawable/ic_statusbar_vibrate"
         android:key="volume"
         android:title="@*android:string/volume_unknown" />
+    
+    <com.android.systemui.tuner.StatusBarSwitch
+        android:icon="@drawable/ic_statusbar_mute"
+        android:key="mute"
+        android:title="@string/volume_ringer_status_silent" />
 
     <com.android.systemui.tuner.StatusBarSwitch
         android:icon="@drawable/ic_statusbar_wifi"
@@ -100,8 +110,31 @@
         android:key="airplane"
         android:title="@string/status_bar_airplane" />
 
+    <!-- other weird signal stuff -->
+
+    <com.android.systemui.tuner.BatteryPreference
+        android:icon="@*android:drawable/ic_battery"
+        android:title="@string/battery"
+        android:summary="%s"
+        android:entries="@array/battery_options" />
+
     <com.android.systemui.tuner.StatusBarSwitch
         android:icon="@drawable/ic_statusbar_alarm"
         android:key="alarm_clock"
         android:title="@string/status_bar_alarm" />
+
+    <!-- secure -->
+    
+    <com.android.systemui.tuner.ClockPreference
+        android:icon="@drawable/ic_statusbar_clock"
+        android:title="@string/tuner_time"
+        android:summary="%s"
+        android:entries="@array/clock_options" />
+
+    <com.android.systemui.tuner.TunerSwitch
+        android:icon="@drawable/ic_statusbar_priority"
+        android:key="low_priority"
+        android:title="@string/tuner_low_priority"
+        sysui:defValue="false" />
+
 </PreferenceScreen>
