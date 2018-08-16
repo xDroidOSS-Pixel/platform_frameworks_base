@@ -90,5 +90,6 @@ public class SystemSettings {
         // Evolution X additions
         Settings.System.NETWORK_TRAFFIC_STATE,
         Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD,
+        Settings.System.LOCKSCREEN_BATTERY_INFO,
     };
 }
