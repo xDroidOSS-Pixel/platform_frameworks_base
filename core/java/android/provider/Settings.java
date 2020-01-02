@@ -5702,6 +5702,12 @@ public final class Settings {
         public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
 
         /**
+         * Whether or not to vibrate when a touchscreen gesture is detected
+         * @hide
+         */
+        public static final String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
+
+        /**
          * Whether to use the custom quick unlock screen control
          * @hide
          */
