@@ -350,5 +350,6 @@ public class SecureSettingsValidators {
         // xdroidOSS Additional
         VALIDATORS.put(Secure.VOLUME_LINK_NOTIFICATION, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.TETHERING_ALLOW_VPN_UPSTREAMS, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(Secure.FACE_UNLOCK_METHOD, BOOLEAN_VALIDATOR);
     }
 }
