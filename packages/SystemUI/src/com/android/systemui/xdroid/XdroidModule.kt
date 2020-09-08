@@ -17,6 +17,7 @@
 package com.android.systemui.xdroid
 
 import com.android.systemui.qs.tileimpl.QSTileImpl
+import com.android.systemui.qs.tiles.AntiFlickerTile
 import com.android.systemui.qs.tiles.CellularTile
 import com.android.systemui.qs.tiles.LiveDisplayTile
 import com.android.systemui.qs.tiles.UsbTetherTile
@@ -30,6 +31,12 @@ import dagger.multibindings.StringKey
 
 @Module
 interface XdroidModule {
+
+    /** Inject AntiFlickerTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(AntiFlickerTile.TILE_SPEC)
+    fun bindAntiFlickerTile(antiFlickerTile: AntiFlickerTile): QSTileImpl<*>
 
     /** Inject CellularTile into tileMap in QSModule */
     @Binds
@@ -48,7 +55,7 @@ interface XdroidModule {
     @IntoMap
     @StringKey(ReadingModeTile.TILE_SPEC)
     fun bindReadingModeTile(readingModeTile: ReadingModeTile): QSTileImpl<*>
-    
+
     /** Inject UsbTetherTile into tileMap in QSModule */
     @Binds
     @IntoMap

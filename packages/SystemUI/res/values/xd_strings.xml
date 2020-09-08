@@ -39,6 +39,9 @@
     <string name="global_action_settings">Settings</string>
 
     <!-- Custom QS tiles -->
+    <!-- Anti flicker QS tile -->
+    <string name="quick_settings_anti_flicker">Anti flicker</string>
+
     <!-- USB tethering QS tile -->
     <string name="quick_settings_usb_tether_label">USB tethering</string>
     
