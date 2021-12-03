@@ -612,6 +612,8 @@ public final class NotificationPanelViewController implements Dumpable {
     private int mGoneToDreamingTransitionTranslationY;
     private int mLockscreenToOccludedTransitionTranslationY;
 
+    private boolean mBlockedGesturalNavigation = false;
+
     private final Runnable mFlingCollapseRunnable = () -> fling(0, false /* expand */,
             mNextCollapseSpeedUpFactor, false /* expandBecauseOfFalsing */);
     private final Runnable mAnimateKeyguardBottomAreaInvisibleEndRunnable =
@@ -3432,6 +3434,10 @@ public final class NotificationPanelViewController implements Dumpable {
         );
     }
 
+    public void setBlockedGesturalNavigation(boolean blocked) {
+        mBlockedGesturalNavigation = blocked;
+    }
+
     /** Updates notification panel-specific flags on {@link SysUiState}. */
     public void updateSystemUiStateFlags() {
         if (SysUiState.DEBUG) {
@@ -3440,10 +3446,10 @@ public final class NotificationPanelViewController implements Dumpable {
         }
         mSysUiState
                 .setFlag(SYSUI_STATE_NOTIFICATION_PANEL_VISIBLE, getExpandedFraction() > 0)
-                .setFlag(SYSUI_STATE_NOTIFICATION_PANEL_EXPANDED,
+                .setFlag(SYSUI_STATE_NOTIFICATION_PANEL_EXPANDED, mBlockedGesturalNavigation ||
                         isFullyExpanded() && !mQsController.getExpanded())
                 .setFlag(SYSUI_STATE_QUICK_SETTINGS_EXPANDED,
-                        isFullyExpanded() && mQsController.getExpanded()).commitUpdate(mDisplayId);
+                        (isFullyExpanded() && mQsController.getExpanded())).commitUpdate(mDisplayId);
     }
 
     private void debugLog(String fmt, Object... args) {
