@@ -179,6 +179,7 @@ android_library {
         "motion_tool_lib",
         "bcsmartspace-google",
         "xd.xdui-preference",
+        "faceunlock_framework",
     ],
     manifest: "AndroidManifest.xml",
 
