@@ -125,6 +125,8 @@ android_library {
         "jsr330",
         "lottie",
         "LowLightDreamLib",
+        "faceunlock_framework",
+
     ],
     manifest: "AndroidManifest.xml",
     additional_manifests: ["CustomManifest.xml"],
