@@ -260,7 +260,6 @@ public class xdUtils {
         private static boolean mWifiState;
         private static boolean mCellularState;
         private static boolean mBluetoothState;
-        private static int mLocationState;
         private static int mRingerState;
         private static int mZenState;
 
