@@ -92,4 +92,7 @@
     <java-symbol type="string" name="sleep_mode_notification_content" />
     <java-symbol type="string" name="sleep_mode_enabled_toast" />
     <java-symbol type="string" name="sleep_mode_disabled_toast" />
+
+    <!-- Screen off delay -->
+    <java-symbol type="integer" name="config_screen_off_delay" />
 </resources>
