@@ -18602,4 +18602,10 @@ public class ActivityManagerService extends IActivityManager.Stub
             Trace.traceBegin(traceTag, methodName + subInfo);
         }
     }
+
+    boolean shouldSkipBootCompletedBroadcastForPackage(ApplicationInfo info) {
+        return getAppOpsManager().checkOpNoThrow(
+                AppOpsManager.OP_RUN_ANY_IN_BACKGROUND,
+                info.uid, info.packageName) != AppOpsManager.MODE_ALLOWED;
+    }
 }
