@@ -2320,7 +2320,6 @@ public class NotificationManagerService extends SystemService {
                 mAppOps,
                 new SysUiStatsEvent.BuilderFactory(),
                 mShowReviewPermissionsNotification);
-        mPreferencesHelper.updateFixedImportance(mUm.getUsers());
         mRankingHelper = new RankingHelper(getContext(),
                 mRankingHandler,
                 mPreferencesHelper,
