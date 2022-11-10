@@ -177,6 +177,7 @@ android_library {
         "lottie",
         "LowLightDreamLib",
         "motion_tool_lib",
+        "xd.xdui-preference",
     ],
     manifest: "AndroidManifest.xml",
 
