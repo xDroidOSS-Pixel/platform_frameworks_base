@@ -75,4 +75,7 @@
         <item>com.shannon.imsservice</item>
         <item>org.pixelexperience.faceunlock</item>
     </string-array>
+
+    <!-- Boost Framework -->
+    <bool name="config_supportsBoostFramework">false</bool>
 </resources>
