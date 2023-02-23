@@ -335,7 +335,7 @@ RENDERTHREAD_TEST(RenderNodeDrawable, projectionReorder) {
     ContextFactory contextFactory;
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, parent.get(), &contextFactory));
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     info.damageAccumulator = &damageAccumulator;
     parent->prepareTree(info);
@@ -399,7 +399,7 @@ RENDERTHREAD_SKIA_PIPELINE_TEST(RenderNodeDrawable, emptyReceiver) {
     ContextFactory contextFactory;
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, parent.get(), &contextFactory));
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     info.damageAccumulator = &damageAccumulator;
     parent->prepareTree(info);
@@ -519,7 +519,7 @@ RENDERTHREAD_SKIA_PIPELINE_TEST(RenderNodeDrawable, projectionHwLayer) {
     ContextFactory contextFactory;
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, parent.get(), &contextFactory));
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     info.damageAccumulator = &damageAccumulator;
     parent->prepareTree(info);
@@ -619,7 +619,7 @@ RENDERTHREAD_TEST(RenderNodeDrawable, projectionChildScroll) {
     ContextFactory contextFactory;
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, parent.get(), &contextFactory));
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     info.damageAccumulator = &damageAccumulator;
     parent->prepareTree(info);
@@ -635,7 +635,7 @@ static int drawNode(RenderThread& renderThread, const sp<RenderNode>& renderNode
     ContextFactory contextFactory;
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, renderNode.get(), &contextFactory));
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     info.damageAccumulator = &damageAccumulator;
     renderNode->prepareTree(info);

@@ -275,7 +275,7 @@ RENDERTHREAD_TEST(RenderNode, prepareTree_nullableDisplayList) {
     ContextFactory contextFactory;
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, rootNode.get(), &contextFactory));
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     info.damageAccumulator = &damageAccumulator;
 
@@ -312,7 +312,7 @@ RENDERTHREAD_TEST(DISABLED_RenderNode, prepareTree_HwLayer_AVD_enqueueDamage) {
     std::unique_ptr<CanvasContext> canvasContext(
             CanvasContext::create(renderThread, false, rootNode.get(), &contextFactory));
     canvasContext->setSurface(nullptr);
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *canvasContext.get());
+    TreeInfo info(TreeInfo::MODE_FULL, *canvasContext.get());
     DamageAccumulator damageAccumulator;
     LayerUpdateQueue layerUpdateQueue;
     info.damageAccumulator = &damageAccumulator;

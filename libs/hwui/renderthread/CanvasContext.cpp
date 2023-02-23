@@ -372,7 +372,7 @@ void CanvasContext::prepareTree(TreeInfo& info, int64_t* uiFrameInfo, int64_t sy
         // Only the primary target node will be drawn full - all other nodes would get drawn in
         // real time mode. In case of a window, the primary node is the window content and the other
         // node(s) are non client / filler nodes.
-        info.mode = (node.get() == target ? TreeInfo::MODE_FULL : TreeInfo::MODE_RT_ONLY);
+        info.mode = (node.get() == target ? TreeInfo::MODE_FULL : TreeInfo::MODE_FULL);
         node->prepareTree(info);
         GL_CHECKPOINT(MODERATE);
     }
@@ -805,7 +805,7 @@ void CanvasContext::prepareAndDraw(RenderNode* node) {
         .addFlag(FrameInfoFlags::RTAnimation)
         .setVsync(vsync, vsync, vsyncId, frameDeadline, frameInterval);
 
-    TreeInfo info(TreeInfo::MODE_RT_ONLY, *this);
+    TreeInfo info(TreeInfo::MODE_FULL, *this);
     prepareTree(info, frameInfo, systemTime(SYSTEM_TIME_MONOTONIC), node);
     if (info.out.canDrawThisFrame) {
         draw();

@@ -31,7 +31,7 @@ AnimationContext::AnimationContext(renderthread::TimeLord& clock)
 AnimationContext::~AnimationContext() {}
 
 void AnimationContext::destroy() {
-    startFrame(TreeInfo::MODE_RT_ONLY);
+    startFrame(TreeInfo::MODE_FULL);
     while (mCurrentFrameAnimations.mNextHandle) {
         AnimationHandle* current = mCurrentFrameAnimations.mNextHandle;
         AnimatorManager& animators = current->mRenderNode->animators();
