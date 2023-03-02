@@ -44,6 +44,7 @@ public class PixelPropsUtils {
     private static final String PACKAGE_PS = "com.android.vending";
     private static final String PACKAGE_SI = "com.google.android.settings.intelligence";
     private static final String SAMSUNG = "com.samsung.android.";
+    private static final String SAMSUNGACCESSORY = "com.samsung.accessory.";
     private static final String SPOOF_MUSIC_APPS = "persist.sys.disguise_props_for_music_app";
 
     private static final String sCertifiedFp =
@@ -261,6 +262,7 @@ public class PixelPropsUtils {
         }
         if (packageName.startsWith("com.google.")
                 || packageName.startsWith(SAMSUNG)
+                || packageName.startsWith(SAMSUNGACCESSORY)
                 || Arrays.asList(extraPackagesToChange).contains(packageName)) {
 
             Map<String, Object> propsToChange = new HashMap<>();
