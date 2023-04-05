@@ -86,6 +86,7 @@ import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.transition.TransitionSet;
 import android.transition.TransitionValues;
+import android.util.BoostFramework;
 import android.util.IndentingPrintWriter;
 import android.util.Log;
 import android.util.MathUtils;
@@ -738,6 +739,11 @@ public final class NotificationPanelViewController implements Dumpable {
     private boolean mUnocclusionTransitionFlagEnabled = false;
 
     private boolean mBlockedGesturalNavigation = false;
+    
+    /**
+     * For PanelView fling perflock call
+     */
+    private BoostFramework mPerf = null;
 
     private final Runnable mFlingCollapseRunnable = () -> fling(0, false /* expand */,
             mNextCollapseSpeedUpFactor, false /* expandBecauseOfFalsing */);
@@ -1039,6 +1045,7 @@ public final class NotificationPanelViewController implements Dumpable {
                     }
                 });
         dumpManager.registerDumpable(this);
+        mPerf = new BoostFramework();
     }
 
     private void unlockAnimationFinished() {
@@ -2165,6 +2172,10 @@ public final class NotificationPanelViewController implements Dumpable {
                 animator.setDuration(mFixedDuration);
             }
         }
+        if (mPerf != null) {
+            String currentPackage = mView.getContext().getPackageName();
+            mPerf.perfHint(BoostFramework.VENDOR_HINT_SCROLL_BOOST, currentPackage, -1, BoostFramework.Scroll.PANEL_VIEW);
+        }
         animator.addListener(new AnimatorListenerAdapter() {
             private boolean mCancelled;
 
@@ -2177,11 +2188,17 @@ public final class NotificationPanelViewController implements Dumpable {
 
             @Override
             public void onAnimationCancel(Animator animation) {
+                if (mPerf != null) {
+                    mPerf.perfLockRelease();
+                }
                 mCancelled = true;
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                if (mPerf != null) {
+                    mPerf.perfLockRelease();
+                }
                 if (shouldSpringBack && !mCancelled) {
                     // After the shade is flung open to an overscrolled state, spring back
                     // the shade by reducing section padding to 0.
