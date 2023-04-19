@@ -117,6 +117,7 @@ public class PixelPropsUtils {
             PACKAGE_PS,
             PACKAGE_SUBSCRIPTION_RED,
             "com.google.android.apps.recorder",
+            "com.google.android.apps.restore",
             "com.google.android.apps.tachyon",
             "com.google.android.apps.tycho",
             "com.google.android.apps.wearables.maestro.companion",
