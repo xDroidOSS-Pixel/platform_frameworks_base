@@ -54,7 +54,7 @@ public final class AttestationHooks {
         sP5Props.put("DEVICE", "redfin");
         sP5Props.put("PRODUCT", "redfin");
         sP5Props.put("MODEL", "Pixel 5");
-        sP5Props.put("FINGERPRINT", "google/redfin/redfin:13/TQ2A.230505.002/9891397:user/release-keys");
+        sP5Props.put("FINGERPRINT", "google/redfin/redfin:13/TQ3A.230605.011/10161073:user/release-keys");
     }
 
     private static final Map<String, Object> sP7Props = new HashMap<>();
@@ -64,7 +64,7 @@ public final class AttestationHooks {
         sP7Props.put("DEVICE", "cheetah");
         sP7Props.put("PRODUCT", "cheetah");
         sP7Props.put("MODEL", "Pixel 7 Pro");
-        sP7Props.put("FINGERPRINT", "google/cheetah/cheetah:13/TQ2A.230505.002/9891397:user/release-keys");
+        sP7Props.put("FINGERPRINT", "google/cheetah/cheetah:13/TQ3A.230605.012/10204971:user/release-keys");
     }
 
     private static volatile boolean sIsGms = false;
